@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Gaming Statistics</title>
+    <link rel="stylesheet" href="./templates/schema-master/dist/css/schema.min.css" />
+    <link rel="stylesheet" href="./templates/modified.css"/>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script> 
+    <script src="./templates/schema-master/dist/js/jquery-3.2.1.min.js"></script>
+    <script src = "./templates/schema-master/dist/js/global.js"></script>
+	<script src="./templates/schema-master/dist/js/less.js"></script>
+    <script src="./templates/gs.js"></script>
+	<script>if (window.module) module = window.module;</script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="col5">
+                <div id="selector" class="btn-group">
+                    <button id="pg" class="btn btn-default">PUBG</button>
+                    <button id="ow" class="btn btn-default">Overwatch</button>
+                    <button id="d2" class="btn btn-default">Dota 2</button>
+                    <button id="ll" class="btn btn-default">League of Legends</button>
+                </div>
+                <div class="formG" class="form">
+                    <input id="username" type="text" class="form-element" placeholder="Username to Search" >
+                    <span class="form-group-btn"></span>
+                    <button id="search" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            <div class="col7">
+                <textarea id="info" class="form-element" rows="20"></textarea>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
