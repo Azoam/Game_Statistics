@@ -1,5 +1,9 @@
 {
-"name" : "Gaming-Stats",
-"version" : "1",
-"main" : "main.js"
+  "name": "Gaming-Stats",
+  "version": "1",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.7.9",
+    "overwatch-stats": "^3.0.2"
+  }
 }

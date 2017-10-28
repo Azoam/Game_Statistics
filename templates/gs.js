@@ -1,32 +1,32 @@
  //Global Variables
  Game = null;
- const OWStats = require('overwatch-stats') 
- 
+ const OWStats = require('overwatch-stats')
+
 
 $(document).ready( () =>{
  $("#pg").click( () =>{
      changeCurrent('pg');
      console.log("Changed game to PUBG");
  });
- 
+
  $("#ow").click( () =>{
      changeCurrent('ow');
      console.log("Changed game to PUBG");
  });
- 
- 
+
+
  $("#d2").click( () =>{
      changeCurrent('d2');
      console.log("Changed game to PUBG");
  });
- 
- 
- 
+
+
+
  $("#ll").click( () =>{
      changeCurrent('ll');
      console.log("Changed game to PUBG");
  });
- 
+
  $("#search").click(() =>{
      if(Game == null){
         alert("Make sure to specify a game first!");
@@ -34,7 +34,7 @@ $(document).ready( () =>{
 
      else{
          statistics = search($("#username").val(),Game);
-         console.log($("#username").val());
+         $("#info").val(statistics)
      }
  });
 
@@ -45,7 +45,7 @@ $(document).ready( () =>{
      }
  });
 
- 
+
 });
 
 function changeCurrent(newGame){
@@ -63,38 +63,17 @@ function search(user,game){
     else if(game == 'll'){
         r = llSearch(user);
     }
-
+    return r
 }
 
 function owSearch(user){
+  try{
     OWStats.load(user).then(data =>{
         let stats = new OWStats(data)
-        console.log(stats)
+        console.log(stats._data.us.stats.quickplay.average_stats.__proto__.toString())
         return stats
     })
+  } catch(er){
+    alert("Seems there was an error looking up the username!\n"+er)
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
